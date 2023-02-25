@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'mont';
+    font-weight: 400;
+    src: url(../fonts/mont.ttf);
+}
+@font-face {
+    font-family: 'mont';
+    font-weight: 700;
+    src: url(../fonts/mont-b.ttf);
+}
+@font-face {
+    font-family: 'mont';
+    font-weight: 600;
+    src: url(../fonts/mont-sb.ttf);
+}
+@font-face {
+    font-family: 'sf-pro';
+    font-weight: 400;
+    src: url(../fonts/SFPRODISPLAYREGULAR.OTF);
+}
+@font-face {
+    font-family: 'sf-pro';
+    font-weight: 500;
+    src: url(../fonts/SFPRODISPLAYMEDIUM.OTF);
+}
+@font-face {
+    font-family: 'sf-pro';
+    font-weight: 700;
+    src: url(../fonts/SFPRODISPLAYBOLD.OTF);
+}
+@font-face {
+    font-family: 'ebony';
+    font-weight: 400;
+    src: url(../fonts/EBONY\ Regular.ttf);
+}
+@font-face {
+    font-family: 'ebony';
+    font-weight: 700;
+    src: url(../fonts/Ebony\ W03\ Bold.ttf);
+}
+@font-face {
+    font-family: 'qanelas';
+    font-weight: 600;
+    src: url(../fonts/Qanelas-SemiBold.otf);
+}
+@font-face {
+    font-family: 'qanelas';
+    font-weight: 700;
+    src: url(../fonts/Qanelas-Bold.ttf);
+}
+@font-face {
+    font-family: 'qanelas';
+    font-weight: 500;
+    src: url(../fonts/Qanelas-Medium.ttf);
+}

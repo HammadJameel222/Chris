@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17.928" height="14.087" viewBox="0 0 17.928 14.087">
+  <defs>
+    <clipPath id="clip-path"/>
+  </defs>
+  <g id="list-icon" transform="translate(0 -1.921)" clip-path="url(#clip-path)">
+    <g id="list" transform="translate(0 1.921)">
+      <g id="Group_210" data-name="Group 210" transform="translate(0 0)">
+        <path id="Path_104" data-name="Path 104" d="M4.162,15.715H.96a.926.926,0,0,0-.68.28.926.926,0,0,0-.28.68V18.6a.926.926,0,0,0,.28.68.926.926,0,0,0,.68.28h3.2a.956.956,0,0,0,.96-.96V16.675a.956.956,0,0,0-.96-.96Z" transform="translate(0 -10.592)" fill="#fff"/>
+        <path id="Path_105" data-name="Path 105" d="M4.162,4.285H.96a.926.926,0,0,0-.68.28.926.926,0,0,0-.28.68V7.167a.926.926,0,0,0,.28.68.927.927,0,0,0,.68.28h3.2a.956.956,0,0,0,.96-.96V5.246a.956.956,0,0,0-.96-.961Z" transform="translate(0 -4.285)" fill="#fff"/>
+        <path id="Path_106" data-name="Path 106" d="M4.162,27.143H.96a.926.926,0,0,0-.68.28A.926.926,0,0,0,0,28.1v1.921a.926.926,0,0,0,.28.68.926.926,0,0,0,.68.28h3.2a.956.956,0,0,0,.96-.96V28.1a.956.956,0,0,0-.96-.96Z" transform="translate(0 -16.898)" fill="#fff"/>
+        <path id="Path_107" data-name="Path 107" d="M24.85,15.715h-9.6a.956.956,0,0,0-.96.96V18.6a.956.956,0,0,0,.96.96h9.6a.956.956,0,0,0,.96-.96V16.675a.957.957,0,0,0-.961-.96Z" transform="translate(-7.883 -10.592)" fill="#fff"/>
+        <path id="Path_108" data-name="Path 108" d="M24.85,27.143h-9.6a.956.956,0,0,0-.96.96v1.921a.956.956,0,0,0,.96.96h9.6a.956.956,0,0,0,.96-.96V28.1a.957.957,0,0,0-.961-.96Z" transform="translate(-7.883 -16.898)" fill="#fff"/>
+        <path id="Path_109" data-name="Path 109" d="M25.531,4.566a.926.926,0,0,0-.68-.28h-9.6a.956.956,0,0,0-.96.96V7.167a.956.956,0,0,0,.96.96h9.6a.956.956,0,0,0,.96-.96V5.246A.926.926,0,0,0,25.531,4.566Z" transform="translate(-7.883 -4.286)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>
