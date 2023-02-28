@@ -6,6 +6,8 @@ use App\Models\Attribute as ModelsAttribute;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Attribute;
+use App\Models\Page;
+use App\Models\User;
 use App\Models\Variant;
 use Illuminate\Http\Request;
 
@@ -53,6 +55,7 @@ class PageController extends Controller
 
     public function women()
     {
+
         $category = Category::where(['name' => 'jewelry'])->pluck('id')->first();
         // dd($category);
         $products = Product::where('category_id', $category)->get();
@@ -87,9 +90,61 @@ class PageController extends Controller
         return view('user.screens.products.engagement', compact('products'));
     }
 
-    public function show(Product $product)
+    public function show(Product $product )
     {
+        $products = Product::take(4)->get()->shuffle();
+        $user = User::all();
         $product->load('variants', 'variants.attribute');
-        return view('user.screens.products.products-details', compact('product'));
+        return view('user.screens.products.products-details', compact('product','user','products'));
+    }
+
+    public function create()
+    {
+        return view('admin.screens.pages.create');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'page' => 'required',
+        ]);
+
+        Page::create([
+            'page' => $request->input('page'),
+        ]);
+        return redirect()->route('page.list');
+    }
+
+    public function list()
+    {
+        $pages = Page::all();
+        return view('admin.screens.pages.index',compact('pages'));
+    }
+
+    public function edit(Page $page)
+    {
+        return view('admin.screens.pages.edit',compact('page'));
+    }
+    public function update(Request $request , Page $page)
+    {
+        $request->validate([
+            'page' => 'required',
+        ]);
+        $data =  Page::find($page)->first();
+        $data->page = $request->input('page');
+        $data->save();
+        return redirect()->route('page.list');
+    }
+
+    public function detail(Page $page)
+    {
+        return view('admin.screens.pages.detail',compact('page'));
+    }
+
+    public function destroy(Page $page)
+    {
+        $data = Page::find($page)->first();
+        $data->delete($page);
+        return redirect()->route('page.list');
     }
 }

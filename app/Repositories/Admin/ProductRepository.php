@@ -9,6 +9,7 @@ use App\Models\Attribute;
 use App\Models\Category;
 use App\Models\Discount;
 use App\Models\Product;
+use App\Models\User;
 use App\Models\Variant;
 // use Attribute;
 use Illuminate\View\View;
@@ -43,6 +44,7 @@ class ProductRepository implements ProductInterface
 
     public function create(): View
     {
+
         $categories = Category::all();
         $attributes = Attribute::with('variants')->get();
         $discounts = Discount::all();
@@ -68,7 +70,7 @@ class ProductRepository implements ProductInterface
             $v = Variant::find($variant);
             $product->variants()->attach($v, ['price' => $request->price_add[$key]]);
         }
-        $product->addMedia($request->file('images'))->toMediaCollection('images');
+        $product->addMedia($request->file('image'))->toMediaCollection('images');
         // dd($request->all());
 
         return redirect()->route('product.create');
@@ -76,6 +78,7 @@ class ProductRepository implements ProductInterface
 
     public function show(Product $product)
     {
+
         return view('admin.screens.products.detail', compact('product'));
     }
 

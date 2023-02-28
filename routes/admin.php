@@ -91,3 +91,13 @@ Route::get('/variant/edit/{variant}' , [App\Http\Controllers\Admin\VariantContro
 Route::post('/variant/update/{variant}' , [App\Http\Controllers\Admin\VariantController::class,'update'])->name('variant.update');
 Route::get('/variant/show/{variant}/{id}' , [App\Http\Controllers\Admin\VariantController::class,'show'])->name('variant.show');
 Route::post('/variant/destroy/{variant}' , [App\Http\Controllers\Admin\VariantController::class,'destroy'])->name('variant.destroy');
+
+
+// pages
+Route::get('/page/create' , [App\Http\Controllers\PageController::class,'create'])->name('page.create');
+Route::post('/page/store' , [App\Http\Controllers\PageController::class,'store'])->name('page.store');
+Route::get('/page/list' , [App\Http\Controllers\PageController::class,'list'])->name('page.list');
+Route::get('/page/edit/{page}' , [App\Http\Controllers\PageController::class,'edit'])->name('page.edit');
+Route::post('/page/update/{page}' , [App\Http\Controllers\PageController::class,'update'])->name('page.update');
+Route::get('/page/detail/{page}' , [App\Http\Controllers\PageController::class,'detail'])->name('page.detail');
+Route::post('/page/destroy/{page}' , [App\Http\Controllers\PageController::class,'destroy'])->name('page.destroy');

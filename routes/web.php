@@ -64,3 +64,8 @@ Route::post('/cart/add/{product}' , [App\Http\Controllers\CartController::class,
 Route::post('/cart/destroy/{product}' , [App\Http\Controllers\CartController::class,'destroy'])->name('cart.destroy');
 // Route::post('/cart/destroy/{product}' , [App\Http\Controllers\CartController::class,'destroy'])->name('cart.destroy');
 
+//Rating
+Route::post('/rating/store/{product}' , [App\Http\Controllers\RatingController::class,'store'])->name('rating.store');
+Route::get('/rating/index/{product}' , [App\Http\Controllers\RatingController::class,'index'])->name('rating.index');
+
+

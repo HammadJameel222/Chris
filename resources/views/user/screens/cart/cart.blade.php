@@ -15,63 +15,63 @@
                     <div class="col-lg-12">
                         <div class="table-responsive cart-table">
 
-                                <table class="table mb-70 col-md-10">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">
-                                                <h3 class="primary-text">PRODUCT Name</h3>
-                                            </th>
-                                            <th scope="col">
-                                                <h3 class="primary-text">QUANTITY</h3>
-                                            </th>
-                                            <th scope="col">
-                                                <h3 class="primary-text">UNIT PRICE</h3>
-                                            </th>
-                                            <th scope="col">
-                                                <h3 class="primary-text">Variant Size id</h3>
-                                            </th>
-                                            <th scope="col">
-                                                <h3 class="primary-text">Variant Color id</h3>
-                                            </th>
-                                            <th scope="col">
-                                                <h3 class="primary-text">Remove</h3>
-                                            </th>
+                            <table class="table mb-70 col-md-10">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">
+                                            <h3 class="primary-text">PRODUCT Name</h3>
+                                        </th>
+                                        <th scope="col">
+                                            <h3 class="primary-text">QUANTITY</h3>
+                                        </th>
+                                        <th scope="col">
+                                            <h3 class="primary-text">UNIT PRICE</h3>
+                                        </th>
+                                        <th scope="col">
+                                            <h3 class="primary-text">Variant Size id</h3>
+                                        </th>
+                                        <th scope="col">
+                                            <h3 class="primary-text">Variant Color id</h3>
+                                        </th>
+                                        <th scope="col">
+                                            <h3 class="primary-text">Remove</h3>
+                                        </th>
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($cartItems as $key => $cartItem)
-                                            <td>
-                                                <h3 class="cart-hd-sm">{{ $cartItem['product']->name }}</h3>
-                                            </td>
-                                            <td>
-                                                <h3>{{ $cartItem['Quantity'] }}</h3>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($cartItems as $key => $cartItem)
+                                        <td>
+                                            <h3 class="cart-hd-sm">{{ $cartItem['product']->name }}</h3>
+                                        </td>
+                                        <td>
+                                            <h3>{{ $cartItem['Quantity'] }}</h3>
 
-                                            </td>
+                                        </td>
+                                        <td>
+                                            <h5 class="cart-hd-sm">{{ $cartItem['product']->price }}</h5>
+                                        </td>
+                                        @foreach ($cartItem['Sizes'] as $size)
                                             <td>
-                                                <h5 class="cart-hd-sm">{{ $cartItem['product']->price }}</h5>
+                                                <h5 class="cart-hd-sm">{{ $size }}</h5>
                                             </td>
-                                            @foreach ($cartItem['Sizes'] as $size)
-                                                <td>
-                                                    <h5 class="cart-hd-sm">{{ $size }}</h5>
-                                                </td>
-                                            @endforeach
-                                            @foreach ($cartItem['Colors'] as $color)
-                                                <td>
-                                                    <h5 class="cart-hd-sm">{{ $color }}</h5>
-                                                </td>
-                                            @endforeach
-                                            <td>
-                                                <form action="/cart/destroy/{{ $key }}" method="post"
-                                                    enctype="multipart/form-data">
-                                                    @csrf
-                                                    <input type="submit" value="Remove" class="btn btn-danger">
-                                                </form>
-                                            </td>
-                                            </tr>
                                         @endforeach
-                                    </tbody>
-                                </table>
+                                        @foreach ($cartItem['Colors'] as $color)
+                                            <td>
+                                                <h5 class="cart-hd-sm">{{ $color }}</h5>
+                                            </td>
+                                        @endforeach
+                                        <td>
+                                            <form action="/cart/destroy/{{ $key }}" method="post"
+                                                enctype="multipart/form-data">
+                                                @csrf
+                                                <input type="submit" value="Remove" class="btn btn-danger">
+                                            </form>
+                                        </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                     <div class="row">
@@ -92,7 +92,14 @@
                                                     <h4 class="card-box-hd">Subtotal</h4>
                                                 </div>
                                                 <div>
-                                                    <h4 class="card-box-hd change">£400.00</h4>
+                                                    {{-- @foreach ($cartItems as $cartItem)
+
+                                                        @endforeach --}}
+                                                        {{-- @dd($cartItem['product']->discount->value) --}}
+                                                    {{-- @dd($cartItem['product']->price->subtract($cartItem['product']->discount->value)->getAmount()) --}}
+                                                    {{--  , $cartItem['product']->price , $cartItem['product']->variants[0]->pivot->price , $cartItem['product']->variants[1]->pivot->price) --}}
+                                                    {{-- {{ $cartItem['product']->discount->value , $cartItem['product']->price}} --}}
+                                                    {{-- <h4 class="card-box-hd change">{{ ($cartItem['product']->price , $cartItem['product']->variants[0]->pivot->price , $cartItem['product']->variants[1]->pivot->price)}}</h4> --}}
 
                                                 </div>
                                             </div>

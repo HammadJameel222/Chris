@@ -28,12 +28,15 @@ class DiscountController extends Controller
 
     public function store(StoreDiscountRequest $request) : RedirectResponse
     {
-        $product_id = '2';
-        $dis = new Discount();
-        $dis->product_id = $product_id;
-        $dis->type = $request->input('type');
-        $dis->value = $request->input('value');
-        $dis->save();
+        auth()->user()->product()->discount()->create([
+            $request->sanitized()
+        ]);
+        // $product_id = '2';
+        // $dis = new Discount();
+        // $dis->product_id = $product_id;
+        // $dis->type = $request->input('type');
+        // $dis->value = $request->input('value');
+        // $dis->save();
         return redirect()->route('discount.index');
     }
 

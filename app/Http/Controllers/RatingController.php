@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Rating;
 use App\Http\Requests\StoreRatingRequest;
 use App\Http\Requests\UpdateRatingRequest;
+use App\Models\Product;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\Client\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 
@@ -13,9 +16,11 @@ class RatingController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): Response
+    public function index(Product $product): View
     {
-        //
+        $ratings = $product->ratings->where('review', '!=' , null);
+        $ratings->load('user');
+        return view('user.screens.review.index',compact('ratings'));
     }
 
     /**
@@ -23,15 +28,24 @@ class RatingController extends Controller
      */
     public function create(): Response
     {
-        //
+        // dd($request);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreRatingRequest $request): RedirectResponse
+    public function store(StoreRatingRequest $request , Product $product): RedirectResponse
     {
-        //
+        // // dd(request()->product());
+        // dd($product);
+        // dd($request->all());
+        auth()->user()->ratings()->create([
+            'product_id' => $product->id,
+            'review' => $request->input('review'),
+            'rating' => $request->input('rating'),
+        ]);
+
+        return back();
     }
 
     /**

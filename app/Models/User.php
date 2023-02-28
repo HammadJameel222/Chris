@@ -60,18 +60,10 @@ class User extends Authenticatable
         $this->attributes['password'] = bcrypt($value);
     }
 
-    public function rating()
+    public function ratings()
     {
-        return $this->belongsTo(Rating::class);
+        return $this->hasMany(Rating::class);
     }
 
-    public function canRate(Product $product)
-    {
-        $rating = auth()->user()->rating->where('product_id' , $product);
-        if($rating)
-        {
-            return true; // baad me false krna h
-        }
-        return true;
-    }
+
 }

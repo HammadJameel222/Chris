@@ -193,7 +193,7 @@
                         </form>
                         <div class="row align-items-center list-items-area">
                             @foreach ($products as $product)
-                                    <x-product-list image="{{ asset('assets/images/womens-prod-img-1.png') }}"
+                                    <x-product-list image="{{ $product->getFirstMediaUrl('images') }}"
                                         href="/product/detail/{{ $product->id }}" desc="{{ $product->description }}" addcart=""
                                         price="{{ $product->price }}" />
                             @endforeach
